@@ -1,12 +1,17 @@
+
 const express = require('express');
 const morgan = require('morgan');
-
 const app = express();
 
 app.use(morgan('common'));
 
 const playlist = require('./playstore.js')
 let filterPlaylist = [...playlist];
+
+app.get('/', (req, res) => {
+  res.status(200)
+  res.send("hello world")
+})
 
 app.get('/apps', (req, res) => {
   const { sort, genres } = req.query
@@ -56,6 +61,8 @@ app.get('/apps', (req, res) => {
 })
 
 
-app.listen(8000, () => {
-  console.log('Server started on PORT 8000')
-});
+module.exports = app;
+
+// app.listen(8000, () => {
+//   console.log('Server started on PORT 8000')
+// });

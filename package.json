@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
+    "start":"node server",
+    "debug": "ndb node server",
+    "test": "mocha",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "express": "^4.17.1",
